@@ -11,18 +11,21 @@
 
     <style>
         :root {
-            --beige: #f5ece3;
-            --beige-light: #faf6f1;
-            --beige-dark: #e8ddd1;
-            --charcoal: #3a3535;
-            --charcoal-light: #5a5252;
-            --charcoal-deep: #2a2525;
+            /* Client's Custom Palette */
+            --beige: #eae6e0;
+            --beige-light: #f8f4ee;
+            --beige-dark: #dcd7d0;
+            --charcoal: #404040;
+            --charcoal-light: #5a5a5a;
+            --charcoal-deep: #383838;
+            
+            /* Retaining complementary accent colors to fit the aesthetic */
             --dusty-pink: #c4a08a;
             --dusty-pink-light: #d4b8a6;
             --dusty-pink-dark: #a8836d;
             --dusty-pink-soft: #e0cfc4;
-            --warm-gray: #7a6e66;
-            --overlay: rgba(42,37,37,0.55);
+            --warm-gray: #5a5a5a;
+            --overlay: rgba(56, 56, 56, 0.55);
 
             --font-display: 'Cormorant Garamond', Georgia, serif;
             --font-body: 'Outfit', sans-serif;
@@ -50,7 +53,7 @@
         button { border: none; background: none; cursor: pointer; font-family: inherit; }
         ul, ol { list-style: none; }
 
-        ::selection { background: var(--dusty-pink); color: var(--beige); }
+        ::selection { background: var(--dusty-pink); color: var(--beige-light); }
 
         .container {
             width: 100%;
@@ -129,10 +132,10 @@
             transition: background 0.5s ease, padding 0.4s ease, box-shadow 0.4s ease;
         }
         .nav.scrolled {
-            background: rgba(245,236,227,0.92);
+            background: rgba(248, 244, 238, 0.95);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             padding: 8px 0;
-            box-shadow: 0 1px 0 rgba(122,110,102,0.08);
+            box-shadow: 0 1px 0 rgba(64,64,64,0.08);
         }
         .nav-inner { display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { display: flex; align-items: center; }
@@ -147,7 +150,7 @@
         .nav-links a {
             font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
             letter-spacing: 0.2em; text-transform: uppercase;
-            color: var(--beige); transition: color 0.3s ease; position: relative;
+            color: var(--beige-light); transition: color 0.3s ease; position: relative;
         }
         .nav.scrolled .nav-links a { color: var(--warm-gray); }
         .nav-links a::after {
@@ -160,7 +163,7 @@
         .nav-cta {
             font-family: var(--font-body); font-size: 0.65rem; font-weight: 400;
             letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--beige) !important; background: var(--dusty-pink-dark);
+            color: var(--beige-light) !important; background: var(--dusty-pink-dark);
             padding: 12px 28px;
             transition: background 0.3s ease, transform 0.3s ease;
         }
@@ -172,7 +175,7 @@
             width: 28px; cursor: pointer; z-index: 1001;
         }
         .hamburger span {
-            display: block; height: 1px; background: var(--beige);
+            display: block; height: 1px; background: var(--beige-light);
             transition: all 0.4s var(--ease-out-expo);
         }
         .nav.scrolled .hamburger span { background: var(--warm-gray); }
@@ -189,7 +192,7 @@
         .mobile-menu.active { opacity: 1; visibility: visible; }
         .mobile-menu a {
             font-family: var(--font-display); font-size: 2rem; font-weight: 300;
-            color: var(--beige); letter-spacing: 0.05em; transition: color 0.3s ease;
+            color: var(--beige-light); letter-spacing: 0.05em; transition: color 0.3s ease;
         }
         .mobile-menu a:hover { color: var(--dusty-pink); }
 
@@ -210,7 +213,7 @@
         }
         .hero-overlay {
             position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(42,37,37,0.35) 0%, rgba(42,37,37,0.5) 50%, rgba(42,37,37,0.72) 100%);
+            background: linear-gradient(180deg, rgba(56,56,56,0.35) 0%, rgba(56,56,56,0.5) 50%, rgba(56,56,56,0.72) 100%);
             z-index: 1;
         }
         .hero-grain {
@@ -237,7 +240,7 @@
         }
         .hero-title {
             font-family: var(--font-display); font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-            font-weight: 300; line-height: 1.1; color: var(--beige);
+            font-weight: 300; line-height: 1.1; color: var(--beige-light);
             margin-bottom: 20px; opacity: 0;
             animation: heroFadeUp 1.2s 1s var(--ease-out-expo) forwards;
         }
@@ -245,7 +248,7 @@
         .hero-subtitle {
             font-family: var(--font-body); font-size: clamp(0.88rem, 1.3vw, 1.05rem);
             font-weight: 200; line-height: 1.7;
-            color: rgba(245,236,227,0.75); max-width: 520px;
+            color: rgba(248, 244, 238, 0.75); max-width: 520px;
             margin: 0 0 40px; opacity: 0;
             animation: heroFadeUp 1.2s 1.2s var(--ease-out-expo) forwards;
         }
@@ -261,7 +264,7 @@
             display: inline-flex; align-items: center; gap: 10px;
             font-family: var(--font-body); font-size: 0.68rem; font-weight: 400;
             letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--beige); background: var(--dusty-pink-dark);
+            color: var(--beige-light); background: var(--dusty-pink-dark);
             padding: 16px 36px;
             transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
         }
@@ -275,8 +278,8 @@
             display: inline-flex; align-items: center;
             font-family: var(--font-body); font-size: 0.68rem; font-weight: 400;
             letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--beige); padding: 16px 36px;
-            border: 1px solid rgba(245,236,227,0.25);
+            color: var(--beige-light); padding: 16px 36px;
+            border: 1px solid rgba(248, 244, 238, 0.25);
             transition: border-color 0.4s ease, background 0.4s ease;
         }
         .btn-secondary:hover { border-color: var(--dusty-pink); background: rgba(196,160,138,0.1); }
@@ -286,7 +289,7 @@
             z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
             opacity: 0; animation: heroFadeUp 1s 2s var(--ease-out-expo) forwards;
         }
-        .hero-scroll-text { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,236,227,0.4); }
+        .hero-scroll-text { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(248, 244, 238, 0.4); }
         .hero-scroll-line {
             width: 1px; height: 40px;
             background: linear-gradient(to bottom, var(--dusty-pink), transparent);
@@ -303,16 +306,23 @@
             background: var(--beige-light);
         }
         .about-inner {
-            display: grid; grid-template-columns: 0.8fr 1.2fr;
-            gap: clamp(40px, 6vw, 100px); align-items: start;
+            display: grid; 
+            grid-template-columns: 1fr 1fr; /* SYMMETRICAL LAYOUT */
+            gap: clamp(40px, 6vw, 100px); 
+            align-items: start;
         }
-        .about-image-wrap { position: relative; }
+        .about-image-wrap { 
+            position: sticky; /* STICKY EFFECT ON SCROLL */
+            top: 120px;
+        }
         .about-image-frame {
             position: relative; overflow: hidden;
-            max-width: 280px;
+            width: 100%;
+            max-width: 100%; /* BIGGER IMAGE */
+            aspect-ratio: 4/5;
         }
         .about-image-frame img {
-            width: 100%; height: auto; object-fit: cover;
+            width: 100%; height: 100%; object-fit: cover;
             transition: transform 8s ease;
         }
         .about-image-frame:hover img { transform: scale(1.04); }
@@ -333,16 +343,6 @@
             line-height: 1.6; color: var(--dusty-pink-dark);
             padding: 24px 0 24px 24px;
             border-left: 2px solid var(--dusty-pink); margin: 2rem 0;
-        }
-        .about-list {
-            font-size: 0.9rem; font-weight: 300; line-height: 1.8;
-            color: var(--warm-gray); margin-bottom: 1.5rem;
-        }
-        .about-list span {
-            display: block; padding-left: 16px; position: relative;
-        }
-        .about-list span::before {
-            content: '–'; position: absolute; left: 0; color: var(--dusty-pink-dark);
         }
 
         /* EDUCATION */
@@ -370,7 +370,7 @@
         /* SERVICES */
         .services {
             padding: clamp(80px, 12vw, 160px) 0;
-            background: var(--charcoal-deep); color: var(--beige);
+            background: var(--charcoal-deep); color: var(--beige-light);
             position: relative; overflow: hidden;
         }
         .services::before {
@@ -380,13 +380,13 @@
             pointer-events: none;
         }
         .services .section-label { color: var(--dusty-pink-light); }
-        .services .section-title { color: var(--beige); }
+        .services .section-title { color: var(--beige-light); }
         .services-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
         .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
         .service-card {
             padding: clamp(32px, 4vw, 56px);
-            background: rgba(245,236,227,0.03);
-            border: 1px solid rgba(245,236,227,0.06);
+            background: rgba(248, 244, 238, 0.03);
+            border: 1px solid rgba(248, 244, 238, 0.06);
             transition: background 0.5s ease, border-color 0.5s ease;
             position: relative; overflow: hidden;
         }
@@ -396,11 +396,11 @@
             transition: width 0.8s var(--ease-out-expo);
         }
         .service-card:hover::before { width: 100%; }
-        .service-card:hover { background: rgba(245,236,227,0.06); border-color: rgba(196,160,138,0.15); }
+        .service-card:hover { background: rgba(248, 244, 238, 0.06); border-color: rgba(196,160,138,0.15); }
         .service-icon { width: 40px; height: 40px; margin-bottom: 24px; color: var(--dusty-pink); }
         .service-card h3 {
             font-family: var(--font-display); font-size: 1.4rem; font-weight: 400;
-            color: var(--beige); margin-bottom: 12px;
+            color: var(--beige-light); margin-bottom: 12px;
         }
         .service-card .service-includes {
             font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
@@ -408,40 +408,97 @@
         }
         .service-card p {
             font-size: 0.9rem; font-weight: 300; line-height: 1.75;
-            color: rgba(245,236,227,0.6);
+            color: rgba(248, 244, 238, 0.6);
         }
         .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
         .service-tag {
             font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
-            padding: 6px 14px; border: 1px solid rgba(245,236,227,0.12);
-            color: rgba(245,236,227,0.5);
+            padding: 6px 14px; border: 1px solid rgba(248, 244, 238, 0.12);
+            color: rgba(248, 244, 238, 0.5);
         }
 
-        /* FIRST SESSION */
+        /* FIRST SESSION - UPDATED SYMMETRICAL ANIMATED LAYOUT */
         .first-session {
-            padding: clamp(60px, 10vw, 120px) 0;
+            padding: clamp(80px, 12vw, 160px) 0;
             background: var(--beige-light);
         }
         .first-session-inner {
-            max-width: 700px; margin: 0 auto; text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        .first-session-inner p {
-            font-size: 0.95rem; font-weight: 300; line-height: 1.85;
-            color: var(--warm-gray); margin-bottom: 1.2rem;
+        .first-session-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
-        .first-session-steps {
-            text-align: left; max-width: 520px; margin: 1.5rem auto;
+        .first-session-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
         }
-        .first-session-steps span {
-            display: block; font-size: 0.9rem; font-weight: 300;
-            line-height: 1.8; color: var(--warm-gray); padding-left: 16px; position: relative;
+        .first-session-card {
+            background: var(--beige);
+            padding: 50px 30px;
+            text-align: center;
+            border: 1px solid rgba(64,64,64,0.06);
+            transition: all 0.5s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .first-session-steps span::before {
-            content: '–'; position: absolute; left: 0; color: var(--dusty-pink-dark);
+        .first-session-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top center, rgba(196,160,138,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .first-session-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(56,56,56,0.06);
+            border-color: rgba(196,160,138,0.3);
+        }
+        .first-session-card:hover::before { opacity: 1; }
+        
+        .first-session-icon {
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--beige-light);
+            color: var(--dusty-pink-dark);
+            margin-bottom: 24px;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            transition: transform 0.5s var(--ease-out-expo), background 0.5s ease, color 0.5s ease;
+        }
+        .first-session-card:hover .first-session-icon {
+            transform: scale(1.1);
+            background: var(--dusty-pink-dark);
+            color: var(--beige-light);
+        }
+        .first-session-card p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--charcoal);
+            position: relative;
+            z-index: 1;
+        }
+        .first-session-footer {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .first-session-cta {
-            font-family: var(--font-display); font-size: 1.15rem;
-            font-style: italic; color: var(--dusty-pink-dark); margin-top: 2rem;
+            font-family: var(--font-display); font-size: 1.5rem;
+            font-style: italic; color: var(--dusty-pink-dark); margin-top: 1rem;
         }
 
         /* PILLARS */
@@ -452,11 +509,11 @@
         .pillars-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
         .pillars-grid {
             display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 0; border: 1px solid rgba(122,110,102,0.1);
+            gap: 0; border: 1px solid rgba(64,64,64,0.1);
         }
         .pillar-card {
             padding: clamp(28px, 3vw, 48px); text-align: center;
-            border-right: 1px solid rgba(122,110,102,0.1);
+            border-right: 1px solid rgba(64,64,64,0.1);
             transition: background 0.4s ease;
         }
         .pillar-card:last-child { border-right: none; }
@@ -481,7 +538,7 @@
         .faq-header { text-align: center; max-width: 600px; margin: 0 auto 50px; }
         .faq-list { max-width: 750px; margin: 0 auto; }
         .faq-item {
-            border-bottom: 1px solid rgba(122,110,102,0.12);
+            border-bottom: 1px solid rgba(64,64,64,0.12);
             padding: 24px 0; cursor: pointer;
         }
         .faq-question {
@@ -509,18 +566,18 @@
         /* SPACE / GALLERY */
         .space {
             padding: clamp(80px, 12vw, 160px) 0;
-            background: var(--charcoal-deep); color: var(--beige);
+            background: var(--charcoal-deep); color: var(--beige-light);
         }
         .space .section-label { color: var(--dusty-pink-light); }
-        .space .section-title { color: var(--beige); }
+        .space .section-title { color: var(--beige-light); }
         .space-header { text-align: center; max-width: 600px; margin: 0 auto 50px; }
-        .space-header p { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: rgba(245,236,227,0.5); }
+        .space-header p { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: rgba(248, 244, 238, 0.5); }
         .gallery-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
         }
         .gallery-item {
             position: relative; overflow: hidden; cursor: pointer;
-            background: rgba(245,236,227,0.05); aspect-ratio: 4/3;
+            background: rgba(248, 244, 238, 0.05); aspect-ratio: 4/3;
         }
         .gallery-item img {
             width: 100%; height: 100%; object-fit: cover;
@@ -528,16 +585,16 @@
         }
         .gallery-item:hover img { transform: scale(1.03); }
         .gallery-item .gallery-overlay {
-            position: absolute; inset: 0; background: rgba(42,37,37,0.4);
+            position: absolute; inset: 0; background: rgba(56,56,56,0.4);
             display: flex; align-items: center; justify-content: center;
             opacity: 0; transition: opacity 0.4s ease;
         }
         .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-overlay svg { width: 32px; height: 32px; color: var(--beige); }
+        .gallery-overlay svg { width: 32px; height: 32px; color: var(--beige-light); }
 
         .lightbox {
             position: fixed; inset: 0; z-index: 9999;
-            background: rgba(42,37,37,0.95);
+            background: rgba(56,56,56,0.95);
             display: flex; align-items: center; justify-content: center;
             opacity: 0; visibility: hidden;
             transition: opacity 0.4s ease, visibility 0.4s ease; cursor: pointer;
@@ -546,7 +603,7 @@
         .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
         .lightbox-close {
             position: absolute; top: 24px; right: 32px;
-            color: var(--beige); font-size: 1.5rem; cursor: pointer;
+            color: var(--beige-light); font-size: 1.5rem; cursor: pointer;
             background: none; border: none; transition: color 0.3s ease;
         }
         .lightbox-close:hover { color: var(--dusty-pink); }
@@ -557,9 +614,7 @@
             background: var(--beige); overflow: hidden;
         }
         .reviews-header { text-align: center; max-width: 600px; margin: 0 auto 16px; }
-        .reviews-badge {
-            text-align: center; margin-bottom: 40px;
-        }
+        .reviews-badge { text-align: center; margin-bottom: 40px; }
         .reviews-badge-score {
             font-family: var(--font-display); font-size: 3rem; font-weight: 300;
             color: var(--dusty-pink-dark); line-height: 1;
@@ -585,7 +640,7 @@
         .review-card {
             flex: 0 0 380px;
             background: var(--beige-light);
-            border: 1px solid rgba(122,110,102,0.08);
+            border: 1px solid rgba(64,64,64,0.08);
             padding: 36px; position: relative;
         }
         .review-quote-mark {
@@ -619,26 +674,26 @@
         /* BOOKING */
         .booking {
             padding: clamp(80px, 12vw, 140px) 0;
-            background: var(--dusty-pink-dark); color: var(--beige); text-align: center;
+            background: var(--dusty-pink-dark); color: var(--beige-light); text-align: center;
             position: relative; overflow: hidden;
         }
         .booking::before {
             content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at center, rgba(245,236,227,0.05) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(248, 244, 238, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
-        .booking .section-label { color: rgba(245,236,227,0.6); }
-        .booking .section-title { color: var(--beige); max-width: 700px; margin: 0 auto 20px; }
+        .booking .section-label { color: rgba(248, 244, 238, 0.6); }
+        .booking .section-title { color: var(--beige-light); max-width: 700px; margin: 0 auto 20px; }
         .booking p {
             font-size: 0.95rem; font-weight: 300; line-height: 1.7;
-            color: rgba(245,236,227,0.75); max-width: 520px; margin: 0 auto 36px;
+            color: rgba(248, 244, 238, 0.75); max-width: 520px; margin: 0 auto 36px;
         }
         .booking-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
         .btn-light {
             display: inline-flex; align-items: center; gap: 10px;
             font-family: var(--font-body); font-size: 0.68rem; font-weight: 400;
             letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--dusty-pink-dark); background: var(--beige);
+            color: var(--dusty-pink-dark); background: var(--beige-light);
             padding: 16px 40px;
             transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
         }
@@ -650,11 +705,11 @@
             display: inline-flex; align-items: center; gap: 10px;
             font-family: var(--font-body); font-size: 0.68rem; font-weight: 400;
             letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--beige); padding: 16px 40px;
-            border: 1px solid rgba(245,236,227,0.35);
+            color: var(--beige-light); padding: 16px 40px;
+            border: 1px solid rgba(248, 244, 238, 0.35);
             transition: border-color 0.4s ease, background 0.4s ease;
         }
-        .btn-outline-light:hover { border-color: var(--beige); background: rgba(245,236,227,0.1); }
+        .btn-outline-light:hover { border-color: var(--beige-light); background: rgba(248, 244, 238, 0.1); }
 
         /* CALENDAR */
         .calendar-section {
@@ -664,7 +719,7 @@
         .calendar-header { text-align: center; max-width: 600px; margin: 0 auto 40px; }
         .calendar-embed {
             max-width: 800px; margin: 0 auto;
-            background: white; border: 1px solid rgba(122,110,102,0.1);
+            background: white; border: 1px solid rgba(64,64,64,0.1);
             padding: 24px; min-height: 500px;
         }
         .calendar-embed iframe {
@@ -677,21 +732,18 @@
 
         /* FOOTER */
         .footer {
-            background: var(--charcoal-deep); color: var(--beige);
+            background: var(--charcoal-deep); color: var(--beige-light);
             padding: clamp(60px, 8vw, 100px) 0 0;
         }
         .footer-grid {
             display: grid; grid-template-columns: 1.5fr 1fr 1fr;
             gap: clamp(30px, 5vw, 80px);
             padding-bottom: clamp(40px, 6vw, 80px);
-            border-bottom: 1px solid rgba(245,236,227,0.06);
+            border-bottom: 1px solid rgba(248, 244, 238, 0.06);
         }
         .footer-brand p {
             font-size: 0.9rem; font-weight: 300; line-height: 1.75;
-            color: rgba(245,236,227,0.5); margin-top: 16px; max-width: 340px;
-        }
-        .footer-brand-logo {
-            height: 50px; object-fit: contain; border-radius: 50%;
+            color: rgba(248, 244, 238, 0.5); margin-top: 16px; max-width: 340px;
         }
         .footer h4 {
             font-family: var(--font-body); font-size: 0.65rem; font-weight: 500;
@@ -708,34 +760,34 @@
         .footer-contact-item span,
         .footer-contact-item a {
             font-size: 0.88rem; font-weight: 300;
-            color: rgba(245,236,227,0.6); transition: color 0.3s ease; line-height: 1.5;
+            color: rgba(248, 244, 238, 0.6); transition: color 0.3s ease; line-height: 1.5;
         }
         .footer-contact-item a:hover { color: var(--dusty-pink-light); }
         .footer-socials { display: flex; gap: 16px; margin-top: 28px; }
         .footer-social {
             width: 40px; height: 40px;
-            border: 1px solid rgba(245,236,227,0.1);
+            border: 1px solid rgba(248, 244, 238, 0.1);
             display: flex; align-items: center; justify-content: center;
             transition: border-color 0.3s ease, background 0.3s ease;
         }
         .footer-social:hover { border-color: var(--dusty-pink); background: rgba(196,160,138,0.1); }
         .footer-social svg {
-            width: 16px; height: 16px; color: rgba(245,236,227,0.5);
+            width: 16px; height: 16px; color: rgba(248, 244, 238, 0.5);
             transition: color 0.3s ease;
         }
         .footer-social:hover svg { color: var(--dusty-pink-light); }
         .footer-hours-item {
             display: flex; justify-content: space-between; margin-bottom: 10px;
-            font-size: 0.88rem; font-weight: 300; color: rgba(245,236,227,0.6);
+            font-size: 0.88rem; font-weight: 300; color: rgba(248, 244, 238, 0.6);
         }
         .footer-bottom {
             display: flex; align-items: center; justify-content: space-between; padding: 24px 0;
         }
         .footer-bottom span {
-            font-size: 0.72rem; font-weight: 300; color: rgba(245,236,227,0.3);
+            font-size: 0.72rem; font-weight: 300; color: rgba(248, 244, 238, 0.3);
         }
         .footer-bottom a {
-            font-size: 0.72rem; font-weight: 300; color: rgba(245,236,227,0.3);
+            font-size: 0.72rem; font-weight: 300; color: rgba(248, 244, 238, 0.3);
             transition: color 0.3s ease;
         }
         .footer-bottom a:hover { color: var(--dusty-pink-light); }
@@ -747,17 +799,18 @@
             .services-grid { grid-template-columns: 1fr; }
             .pillars-grid { grid-template-columns: repeat(2, 1fr); }
             .pillar-card:nth-child(2) { border-right: none; }
-            .pillar-card:nth-child(3), .pillar-card:nth-child(4) { border-top: 1px solid rgba(122,110,102,0.1); }
+            .pillar-card:nth-child(3), .pillar-card:nth-child(4) { border-top: 1px solid rgba(64,64,64,0.1); }
             .education-inner { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
             .about-inner { grid-template-columns: 1fr; }
-            .about-image-wrap { max-width: 220px; margin: 0 auto; }
+            .about-image-wrap { position: relative; top: 0; max-width: 400px; margin: 0 auto; }
+            .first-session-grid { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; }
             .pillars-grid { grid-template-columns: 1fr; }
-            .pillar-card { border-right: none; border-bottom: 1px solid rgba(122,110,102,0.1); }
+            .pillar-card { border-right: none; border-bottom: 1px solid rgba(64,64,64,0.1); }
             .pillar-card:last-child { border-bottom: none; }
             .pillar-card:nth-child(3), .pillar-card:nth-child(4) { border-top: none; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -783,13 +836,11 @@
 
 <body>
 
-    <!-- PRELOADER -->
     <div class="preloader" id="preloader">
         <img src="https://raw.githubusercontent.com/agelmet/MADIAM/refs/heads/main/logodiaa.jpg" alt="Logo" class="preloader-logo">
         <div class="preloader-line"></div>
     </div>
 
-    <!-- NAVIGATION -->
     <nav class="nav" id="nav">
         <div class="container nav-inner">
             <a href="#top" class="nav-logo">
@@ -813,7 +864,6 @@
         </div>
     </nav>
 
-    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#about" onclick="closeMobile()">Σχετικά</a>
         <a href="#services" onclick="closeMobile()">Υπηρεσίες</a>
@@ -824,7 +874,6 @@
         <a href="#booking" onclick="closeMobile()">Κλείστε Ραντεβού</a>
     </div>
 
-    <!-- HERO -->
     <section class="hero" id="top">
         <div class="hero-bg">
             <img src="https://raw.githubusercontent.com/agelmet/MADIAM/refs/heads/main/40d97ccc-c33f-4353-ad9e-d9b6ed8ed2c3.jpg" alt="Background">
@@ -850,7 +899,6 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-inner">
@@ -875,7 +923,6 @@
         </div>
     </section>
 
-    <!-- EDUCATION -->
     <section class="education" id="education">
         <div class="container">
             <div class="education-inner">
@@ -896,7 +943,6 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services" id="services">
         <div class="container">
             <div class="services-header">
@@ -954,42 +1000,54 @@
                 </div>
             </div>
 
-            <!-- Common issues -->
             <div style="text-align: center; margin-top: 60px;" class="reveal">
                 <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--dusty-pink-light);margin-bottom:20px;">Συχνά ζητήματα</p>
                 <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:700px;margin:0 auto;">
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Άγχος</span>
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Κρίσεις πανικού</span>
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Ψυχοσωματικά συμπτώματα</span>
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Δυσκολίες στις σχέσεις</span>
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Burnout</span>
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Τραυματικές εμπειρίες</span>
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Συναισθηματική απορρύθμιση</span>
-                    <span class="service-tag" style="border-color:rgba(245,236,227,0.18);color:rgba(245,236,227,0.6);">Χαμηλή αυτοεκτίμηση</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Άγχος</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Κρίσεις πανικού</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Ψυχοσωματικά συμπτώματα</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Δυσκολίες στις σχέσεις</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Burnout</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Τραυματικές εμπειρίες</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Συναισθηματική απορρύθμιση</span>
+                    <span class="service-tag" style="border-color:rgba(248, 244, 238, 0.18);color:rgba(248, 244, 238, 0.6);">Χαμηλή αυτοεκτίμηση</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FIRST SESSION -->
     <section class="first-session">
         <div class="container">
             <div class="first-session-inner">
-                <div class="section-label reveal">Πρώτη Συνεδρία</div>
-                <h2 class="section-title reveal reveal-delay-1">Τι να <em>Περιμένεις</em></h2>
-                <p class="reveal reveal-delay-2">Στην πρώτη μας συνάντηση:</p>
-                <div class="first-session-steps reveal reveal-delay-2">
-                    <span>θα συζητήσουμε τι σε φέρνει στη θεραπεία</span>
-                    <span>θα γνωριστούμε σε ένα ασφαλές πλαίσιο</span>
-                    <span>θα διαμορφώσουμε μια πρώτη κατανόηση του τι χρειάζεσαι</span>
+                <div class="first-session-header">
+                    <div class="section-label reveal">Πρώτη Συνεδρία</div>
+                    <h2 class="section-title reveal reveal-delay-1">Τι να <em>Περιμένεις</em></h2>
+                    <p class="reveal reveal-delay-2" style="font-size: 1.1rem; color: var(--warm-gray); margin-top: 10px;">Στην πρώτη μας συνάντηση:</p>
                 </div>
-                <p class="reveal reveal-delay-3" style="margin-top:1.5rem;">Δεν χρειάζεται να ξέρεις τι να πεις ή από πού να ξεκινήσεις.</p>
-                <p class="first-session-cta reveal reveal-delay-3">Αρκεί να έρθεις όπως είσαι.</p>
+
+                <div class="first-session-grid">
+                    <div class="first-session-card reveal">
+                        <div class="first-session-icon">1</div>
+                        <p>θα συζητήσουμε τι σε φέρνει στη θεραπεία</p>
+                    </div>
+                    <div class="first-session-card reveal reveal-delay-1">
+                        <div class="first-session-icon">2</div>
+                        <p>θα γνωριστούμε σε ένα ασφαλές πλαίσιο</p>
+                    </div>
+                    <div class="first-session-card reveal reveal-delay-2">
+                        <div class="first-session-icon">3</div>
+                        <p>θα διαμορφώσουμε μια πρώτη κατανόηση του τι χρειάζεσαι</p>
+                    </div>
+                </div>
+
+                <div class="first-session-footer reveal reveal-delay-3">
+                    <p style="font-size: 1.05rem; font-weight: 300; color: var(--warm-gray); margin-bottom: 0.5rem;">Δεν χρειάζεται να ξέρεις τι να πεις ή από πού να ξεκινήσεις.</p>
+                    <p class="first-session-cta">Αρκεί να έρθεις όπως είσαι.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PILLARS -->
     <section class="pillars" id="pillars">
         <div class="container">
             <div class="pillars-header">
@@ -1021,7 +1079,6 @@
         </div>
     </section>
 
-    <!-- SPACE / GALLERY -->
     <section class="space" id="space">
         <div class="container">
             <div class="space-header">
@@ -1064,13 +1121,11 @@
         </div>
     </section>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <button class="lightbox-close">&times;</button>
         <img id="lightboxImg" src="" alt="Gallery Image">
     </div>
 
-    <!-- REVIEWS -->
     <section class="reviews" id="reviews">
         <div class="container">
             <div class="reviews-header">
@@ -1085,7 +1140,6 @@
         </div>
         <div class="reviews-carousel reveal">
             <div class="reviews-track" id="reviewsTrack">
-                <!-- Reviews Set 1 -->
                 <div class="review-card">
                     <div class="review-quote-mark">"</div>
                     <p>Από τις λίγες που σε ακούει πραγματικά. Δεν νιώθεις ούτε απόσταση ούτε "θεραπευτικό ύφος". Μια ήρεμη παρουσία που σε βοηθά να βάλεις τάξη μέσα σου.</p>
@@ -1158,7 +1212,6 @@
                         <span class="review-score">10.0</span>
                     </div>
                 </div>
-                <!-- Duplicate for infinite scroll -->
                 <div class="review-card">
                     <div class="review-quote-mark">"</div>
                     <p>Από τις λίγες που σε ακούει πραγματικά. Δεν νιώθεις ούτε απόσταση ούτε "θεραπευτικό ύφος". Μια ήρεμη παρουσία που σε βοηθά να βάλεις τάξη μέσα σου.</p>
@@ -1232,7 +1285,6 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="faq-header">
@@ -1280,7 +1332,6 @@
         </div>
     </section>
 
-    <!-- BOOKING / CTA -->
     <section class="booking" id="booking">
         <div class="container">
             <div class="section-label reveal">Κλείστε Ραντεβού</div>
@@ -1299,7 +1350,6 @@
         </div>
     </section>
 
-    <!-- CALENDAR SECTION -->
     <section class="calendar-section" id="calendar">
         <div class="container">
             <div class="calendar-header">
@@ -1313,12 +1363,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://raw.githubusercontent.com/agelmet/MADIAM/refs/heads/main/logodiaa.jpg" alt="Logo" class="footer-brand-logo">
                     <p>Κλινικός Γνωσιακός Νευροψυχολόγος, Εκπ. Σωματική Ψυχοθεραπεύτρια. Ένας ασφαλής χώρος για να κατανοήσεις, να νιώσεις και να συνδεθείς με τον εαυτό σου.</p>
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/diamantopoulou.m.psychologist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="footer-social" aria-label="Instagram">
@@ -1361,7 +1409,6 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
         // Preloader
         window.addEventListener('load', () => {
